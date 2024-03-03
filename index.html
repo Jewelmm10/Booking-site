@@ -3,10 +3,522 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Tailwind boilarplate</title>
+    <title>Travel & Trips business</title>
 </head>
 <body>
-    <h1 class="bg-slate-500 text-white flex justify-center py-5">Welcome to Tailwind Boilarplate</h1>
+    <div class="header h-[90px] bg-slate-100/5 absolute top-0 left-0 z-50 w-full py-2">
+        <div class="container">
+            <div class="flex items-center justify-between">                
+                <div class="logo flex-1">
+                    <a href="index.html"><img class="w-28" src="images/logo.png"></a>
+                </div>
+                <nav class="hidden md:block flex-1 ml-24">
+                    <ul class="flex items-center space-x-4">
+                        <li><a class="font-bold uppercase text-sm text-white" href="#">Flight</a></li>
+                        <li><a class="font-bold uppercase text-sm text-white" href="#">Hotel</a></li>
+                        <li><a class="font-bold uppercase text-sm text-white" href="#">Activity</a></li>
+                        <li><a class="font-bold uppercase text-sm text-white" href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="hidden md:flex items-center">
+                    <div class="curency uppercase cursor-pointer text-white">usd</div>
+                    <a class="btn border border-gray-200 px-4 py-2 rounded ml-4 text-white" href="#">Sign In</a>
+                </div>
+                <div class="menu md:hidden border rounded-sm cursor-pointer w-10 h-10 text-xl flex items-center justify-center mr-2 text-white">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+        </div>
+        <div class="mobile_nav bg-white py-6 px-3 fixed top-0 -left-full transition-all duration-300 ease-in-out h-full w-full md:hidden z-50">
+            <div class="text-center flex justify-between"><a href="#">
+                <a class="flex-1 block self-center" href="/"><img class="w-28" src="images/logo.png" alt="logo"></a>
+                <span class="close_menu cursor-pointer block w-10 h-10 text-4xl text-gray-400"><i class="ri-close-line"></i></span>
+            </div>
+            <nav class="my-6">
+                <ul class="flex flex-col space-y-3">
+                    <li><a class="block border-b py-2 hover:text-primary font-bold uppercase text-sm text-gray-600" href="#">Flight</a></li>
+                    <li><a class="block border-b py-2 hover:text-primary font-bold uppercase text-sm text-gray-600" href="#">Hotel</a></li>
+                    <li><a class="block border-b py-2 hover:text-primary font-bold uppercase text-sm text-gray-600" href="#">Activity</a></li>
+                    <li><a class="block border-b py-2 hover:text-primary font-bold uppercase text-sm text-gray-600" href="#">Contact</a></li>                 
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="relative">
+    <div class="relative overflow-hidden">
+        <video autoplay loop muted class="w-full h-full object-cover">
+          <source src="images/bg.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="absolute bottom-12 inset-x-0 md:inset-0 flex items-center justify-center m-auto flex-col pt-40 md:pt-0">
+            <h2 class="text-white text-2xl md:text-6xl font-bold text-center leading-tight">Let's Explore your <br> <span class="text-primary">Holiday</span> Trip.</h2>
+            <a class="flex items-center border border-primary rounded-full mt-5 md:mt-10 px-3 py-1 md:px-5 md:py-1.5" href="tel:8801864868936">
+                <span class="w-12 text-2xl text-center text-white border-e border-slate-600"><i class="ri-phone-line"></i></span>
+                <span class="flex flex-col ms-3">
+                    <span class="text-primary capitalize">to more inquiry</span>
+                    <span class="text-white font-bold">+880187896452</span>
+                </span>
+            </a>
+        </div>
+        
+    </div>
+    <div class="md:absolute md:bottom-10 md:inset-x-0 z-30 ">
+        <div class="container">
+        <div class="fliter-wrapper mt-5 ">
+             <div class="relative w-max mx-auto h-12 grid grid-cols-2 items-center px-[3px] rounded-full bg-gray-900 overflow-hidden shadow-2xl shadow-900/20 transition">
+               <div class="absolute indicator"></div>
+               <button role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0" class="tab tab-btn">
+                 <span class="text-gray-100">Flight</span>
+               </button>
+               <button role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1" class="tab tab-btn">
+                 <span class="text-gray-100">Hotel</span>
+               </button>    
+             </div>
+             <div class="mt-6 relative rounded-2xl bg-purple-50">
+               <div role="tabpanel" id="panel-1" class="tab-panel transition duration-300 p-5 md:w-full">
+                   <div class="advance-search">
+                       <div class="flight-type-wrapper flex space-x-2 py-3">
+                           <div class="flex items-center">
+                               <input id="bordered-radio-1" type="radio" value="" checked name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                               <label for="bordered-radio-1" class="w-full py-2 px-2 ms-2 text-sm font-medium text-gray-900">One Way</label>
+                           </div>                
+                           <div class="flex items-center">
+                               <input id="r-2" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                               <label for="r-2" class="w-full py-2 px-2 ms-2 text-sm font-medium text-gray-900">Round Trip</label>
+                           </div>     
+                       </div>
+                       <form action="flight-search.html">
+                           <div class="flex md:flex-row flex-col items-center gap-0.5">
+                               <div class="destination flex md:flex-1 w-full md:w-auto justify-between gap-0.5 relative">
+                                   <div class="bg-gray-200 px-5 py-3 md:rounded-s-md flex-1">
+                                       <div class="item-inner">
+                                           <p class="text-xs text-gray-400">From</p>
+                                           <p>DEL - New Delhi</p>                            
+                                       </div>
+                                   </div>                    
+                                   <div class="bg-gray-200 px-5 py-3 flex-1">
+                                       <div class="item-inner">
+                                           <p class="text-xs text-gray-400">To</p>
+                                           <p>BOM - Mumbai</p>                            
+                                       </div> 
+                                   </div>
+                                   <div class="absolute top-[calc(50%-15px)] left-[calc(50%-15px)] bg-white w-8 h-8 rounded-full shadow-lg flex items-center justify-center"><i class="ri-arrow-left-right-line rotateX-180"></i></div>
+                               </div>                                       
+                               <div class="calendar w-full md:w-auto flex gap-0.5">
+                                   <div class="bg-gray-200 flex-1 md:flex-auto px-8 py-3">
+                                       <div class="item-inner">
+                                           <p class="text-xs text-gray-400">Departure</p>
+                                           <p>Sat, 09 Mar</p>   
+                                       </div>
+                                   </div> 
+                                   <div class="bg-gray-200 flex-1 md:flex-auto px-8 py-3">
+                                       <div class="item-inner">
+                                           <p class="text-xs text-gray-400">Return</p>
+                                           <p>Sun, 10 Mar</p>
+                                       </div> 
+                                   </div>
+                               </div>                                        
+                               <div class="w-full md:w-auto bg-gray-200 px-5 py-3">
+                                   <div class="item-inner">
+                                       <p class="text-xs text-gray-400">Travellers & Class</p>
+                                       <p>1 Traveller, Economy</p>
+                                   </div> 
+                               </div>
+                               <button class="w-full md:w-auto md:rounded-e-md px-8 py-5 bg-primary text-white"><span class="me-2"><i class="ri-search-line"></i></span>Search</button>
+                           </div>
+                       </form>
+                   </div>
+               </div>
+               <div role="tabpanel" id="panel-2" class="absolute top-0 invisible opacity-0 tab-panel transition duration-300 p-5 w-full">
+                   <div class="advance-search">                            
+                       <div class="flight-type-wrapper flex space-x-2 py-3">
+                           <div class="flex items-center">
+                               <input id="c1" type="checkbox" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                               <label for="c1" class="w-full py-2 px-2 ms-2 text-sm font-medium text-gray-900">Business</label>
+                           </div>                
+                           <div class="flex items-center">
+                               <input id="c-2" type="checkbox" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                               <label for="c-2" class="w-full py-2 px-2 ms-2 text-sm font-medium text-gray-900">Couples</label>
+                           </div>     
+                       </div>
+                       <form action="hotel-search-halp.html">
+                           <div class="flex flex-col md:flex-row items-center gap-0.5">
+                               <div class="destination flex flex-1 w-full md:w-auto justify-between gap-0.5 relative">
+                                   <div class="bg-gray-200 px-5 py-3 md:rounded-s-md flex-1">
+                                       <div class="item-inner">
+                                           <p class="text-xs text-gray-400">Destination</p>
+                                           <p>Cox's Bazar</p>                            
+                                       </div>
+                                   </div>                    
+                               </div>                                       
+                               <div class="calendar flex w-full md:w-auto gap-0.5">
+                                   <div class="bg-gray-200 flex-1 md:flex-auto px-8 py-3">
+                                       <div class="item-inner">
+                                           <p class="text-xs text-gray-400">Departure</p>
+                                           <p>Sat, 09 Mar</p>   
+                                       </div>
+                                   </div> 
+                                   <div class="bg-gray-200 flex-1 md:flex-auto px-8 py-3">
+                                       <div class="item-inner">
+                                           <p class="text-xs text-gray-400">Return</p>
+                                           <p>Sun, 10 Mar</p>
+                                       </div> 
+                                   </div>
+                               </div>                                        
+                               <div class="bg-gray-200 w-full md:w-auto flex-1 md:flex-auto px-5 py-3">
+                                   <div class="item-inner">
+                                       <p class="text-xs text-gray-400">Travellers & Class</p>
+                                       <p>1 Traveller, Economy</p>
+                                   </div> 
+                               </div>
+                               <button class="md:rounded-e-md w-full md:w-auto px-8 py-5 bg-primary text-white"><span class="me-2"><i class="ri-search-line"></i></span>Search</button>
+                           </div>
+                       </form>
+                   </div>
+               </div>  
+             </div>
+        </div>
+        </div>
+     </div>
+    </div>
+    <!-- special package -->
+    <section class="special my-20">
+        <div class="container">
+            <div class="section-heading text-center mb-10">
+                <h5 class="sub-title text-primary uppercase text-sm mb-2">Offer & Discount</h5>
+                <h3 class="section-title text-gray-500 uppercase text-3xl font-semibold">OUR SPECIAL PACKAGES</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="col-span-1">
+                    <article class="flex flex-wrap items-end min-h-[520px] rounded-3xl bg-[url('../../images/img8.jpg')] bg-cover bg-center relative">
+                        <div class="offer-badge bg-primary text-white rounded-3xl px-4 py-2 absolute top-5 right-5 text-base uppercase">
+                            upto 20% <span class="lowercase">off</span>
+                        </div>
+                        <div class="offer-content bg-white/85 rounded-3xl m-5 p-6 max-w-[345px]">
+                            <div class="package-meta mb-4">
+                                <ul class="flex text-sm">
+                                   <li><i class="ri-time-line text-primary mr-3"></i>7D/6N</li>
+                                   <li><i class="ri-user-line text-primary mr-3"></i>pax: 10</li>
+                                   <li><i class="ri-map-pin-line text-primary mr-3"></i>Malaysia</li>
+                                </ul>
+                             </div>
+                             <h3 class="uppercase text-xl mb-3"><a href="#">TOUR TO SATORINI</a></h3>
+                             <p class="text-gray-500 text-base">Fusce hic augue velit wisi ips quibus dam pariatur, iusto.</p>
+                             <div class="price-list text-primary uppercase text-xl my-4 font-bold">
+                                price: 
+                                <del>$1300 </del>
+                                <ins class="no-underline ml-3">$1105</ins>
+                             </div>
+                             <a href="#" class="btn btn-primary btn-search">Book Now</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-span-1">
+                    <article class="flex flex-wrap items-end min-h-[520px] rounded-3xl bg-[url('../../images/img9.jpg')] bg-cover bg-center relative">
+                        <div class="offer-badge bg-primary text-white rounded-3xl px-4 py-2 absolute top-5 right-5 text-base uppercase">
+                            upto 25% <span class="lowercase">off</span>
+                        </div>
+                        <div class="offer-content bg-white/85 rounded-3xl m-5 p-6 max-w-[345px]">
+                            <div class="package-meta mb-4">
+                                <ul class="flex text-sm">
+                                   <li><i class="ri-time-line text-primary mr-3"></i>7D/6N</li>
+                                   <li><i class="ri-user-line text-primary mr-3"></i>pax: 10</li>
+                                   <li><i class="ri-map-pin-line text-primary mr-3"></i>Malaysia</li>
+                                </ul>
+                             </div>
+                             <h3 class="uppercase text-xl mb-3"><a href="#">WEEKEND TO PARIS</a></h3>
+                             <p class="text-gray-500 text-base">Fusce hic augue velit wisi ips quibus dam pariatur, iusto.</p>
+                             <div class="price-list text-primary uppercase text-xl my-4 font-bold">
+                                price: 
+                                <del>$1300 </del>
+                                <ins class="no-underline ml-3">$1200</ins>
+                             </div>
+                             <a href="#" class="btn btn-primary btn-search">Book Now</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- recommended package -->
+    <section class="special my-20">
+        <div class="container">
+            <div class="section-heading text-center mb-10">
+                <h5 class="sub-title text-primary uppercase text-sm mb-2">Hot Deals</h5>
+                <h3 class="section-title text-gray-500 uppercase text-3xl font-semibold">Recommended for you</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="col-span-1 service-item bg-white rounded-md shadow-md overflow-hidden">
+                    <div class="feature-img">
+                        <a href="#">
+                            <img src="images/feature-1-2-450x300.png" alt="services">
+                        </a>
+                    </div>
+                    <div class="content-item relative p-5">
+                        <div class="content-inner">
+                            <div class="stars text-primary">
+                                <span class="ri-star-s-fill"></span>
+                                <span class="ri-star-s-fill"></span>
+                                <span class="ri-star-s-fill"></span>
+                            </div>
+                            <h3 class="title">Hotel WBF Hommachi</h3>
+                            <span class="text-gray-500 text-sm">New York City</span>
+                        </div>
+                        <div class="section-footer mt-4 pt-4 border-t-gray-500">
+                            <div class="reviews mb-3">
+                                <span class="rate bg-primary/5 border border-primary text-primary rounded-sm text-sm px-3 py-1">
+                                    5<span>/</span>5
+                                </span>
+                                <span class="rate-text font-semibold mx-3">Excellent</span>
+                                <span class="rate-summary text-gray-500 text-sm">(3 Reviews)</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 text-sm">
+                                From:<span class="text-black font-semibold mx-2 text-lg">$150.00</span>
+                                <span class="unit">/night</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="col-span-1 service-item bg-white rounded-md shadow-md overflow-hidden">
+                    <div class="feature-img">
+                        <a href="#">
+                            <img src="images/feature-1-450x300.png" alt="services">
+                        </a>
+                    </div>
+                    <div class="content-item relative p-5">
+                        <div class="content-inner">
+                            <div class="stars text-primary">
+                                <span class="ri-star-s-fill"></span>
+                                <span class="ri-star-s-fill"></span>
+                                <span class="ri-star-s-fill"></span>
+                            </div>
+                            <h3 class="title">Redac Gateway Hotel</h3>
+                            <span class="text-gray-500 text-sm">Los Angeles</span>
+                        </div>
+                        <div class="section-footer mt-4 pt-4 border-t-gray-500">
+                            <div class="reviews mb-3">
+                                <span class="rate bg-primary/5 border border-primary text-primary rounded-sm text-sm px-3 py-1">
+                                    5<span>/</span>5
+                                </span>
+                                <span class="rate-text font-semibold mx-3">Excellent</span>
+                                <span class="rate-summary text-gray-500 text-sm">(3 Reviews)</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 text-sm">
+                                From:<span class="text-black font-semibold mx-2 text-lg">$150.00</span>
+                                <span class="unit">/night</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1 service-item bg-white rounded-md shadow-md overflow-hidden">
+                    <div class="feature-img">
+                        <a href="#">
+                            <img src="images/feature-12-450x300.png" alt="services">
+                        </a>
+                    </div>
+                    <div class="content-item relative p-5">
+                        <div class="content-inner">
+                            <div class="stars text-primary">
+                                <span class="ri-star-s-fill"></span>
+                                <span class="ri-star-s-fill"></span>
+                                <span class="ri-star-s-fill"></span>
+                            </div>
+                            <h3 class="title">Edwardian Kenilworth</h3>
+                            <span class="text-gray-500 text-sm">Virginia</span>
+                        </div>
+                        <div class="section-footer mt-4 pt-4 border-t-gray-500">
+                            <div class="reviews mb-3">
+                                <span class="rate bg-primary/5 border border-primary text-primary rounded-sm text-sm px-3 py-1">
+                                    5<span>/</span>5
+                                </span>
+                                <span class="rate-text font-semibold mx-3">Excellent</span>
+                                <span class="rate-summary text-gray-500 text-sm">(3 Reviews)</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 text-sm">
+                                From:<span class="text-black font-semibold mx-2 text-lg">$150.00</span>
+                                <span class="unit">/night</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- PHOTO GALLERY -->
+    <section class="special my-20">
+        <div class="container">
+            <div class="section-heading text-center mb-10">
+                <h5 class="sub-title text-primary uppercase text-sm mb-2">PHOTO GALLERY</h5>
+                <h3 class="section-title text-gray-500 uppercase text-3xl font-semibold">PHOTO'S FROM TRAVELLERS</h3>
+            </div>           
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="grid gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-2xl" src="images/gallery (1).jpg" alt="">
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-2xl" src="images/gallery (2).jpg" alt="">
+                    </div>
+                </div>
+                <div class="grid gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-2xl" src="images/gallery (5).jpg" alt="">
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-2xl" src="images/gallery (3).jpg" alt="">
+                    </div>
+                </div>
+                <div class="grid gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-2xl" src="images/gallery (7).jpg" alt="">
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-2xl" src="images/gallery (8).jpg" alt="">
+                    </div>
+                </div>
+                
+            </div>
+
+            
+        </div>
+    </section>
+    <div class="banner bg-gray-800">
+        <div class="container">
+            <div class="flex flex-col md:flex-row gap-4 items-center">
+                <div class="basis-1/5 flex flex-col items-center justify-center py-16">
+                    <div class="icon mb-5 w-16 h-16 rounded-full bg-primary shadow-2xl shadow-primary flex items-center justify-center text-white text-2xl">
+                        <i class="ri-phone-line"></i>
+                    </div>
+                    <div class="content flex flex-col text-center">
+                        <span class="text-primary">More Inquiry</span>
+                        <a class="text-2xl text-white my-2" href="tel:+8801864878936">+8801864878787</a>
+                    </div>
+                </div>
+                
+                <div class="flex-1 border-y md:border-x border-gray-500 px-20 py-16">
+                    <div class="icon"></div>
+                    <div class="content flex flex-col text-center">
+                        <h2 class="text-3xl md:text-4xl capitalize text-white font-bold mb-3">Join the newslatter</h2>
+                        <p class="text-sm text-white mb-4">To receive our best monthly deals</p>
+                        <form action="">
+                            <div class="flex border border-primary rounded-s-md rounded-e-sm overflow-hidden">
+                                <input class="bg-transparent border-none outline-none p-3 flex-1 text-sm font-normal" type="text" placeholder="Enter Your Gmail...">
+                                <button class="bg-primary w-12 text-white"><i class="ri-arrow-right-line"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="basis-1/5 flex flex-col items-center justify-center py-16">
+                    <div class="icon mb-5 w-16 h-16 rounded-full bg-primary shadow-2xl shadow-primary flex items-center justify-center text-white text-2xl"><i class="ri-send-plane-fill"></i></div>
+                    <div class="content flex flex-col text-center">
+                        <span class="text-primary">Send Mail</span>
+                        <a class="text-2xl text-white my-2" href="mailto:info@example.com">info@example.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-gray-950">
+        <div class="container py-24">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-5 md:gap-4">
+                <div class="widget">
+                    <div class="footer-logo">
+                        <a href="index.html"><img class="w-1/2" src="images/logo.png" alt="logo"></a>
+                    </div>
+                    <p class="my-4 text-gray-500">Urna ratione ante harum provident, eleifend, vulputate molestiae proin fringilla, praesentium magna</p>
+                    <button class="btn btn-primary btn-search">Book A tour</button>
+                </div>
+                <div class="widget">
+                    <h3 class="footer-title text-gray-200 mb-4">Quick Link</h3>
+                    <ul class="flex flex-col">
+                        <li><a class="text-gray-500 capitalize py-2 block hover:text-primary" href="#">About us</a></li>
+                        <li><a class="text-gray-500 capitalize py-2 block hover:text-primary" href="#">Destinations</a></li>
+                        <li><a class="text-gray-500 capitalize py-2 block hover:text-primary" href="#">Tour package</a></li>
+                        <li><a class="text-gray-500 capitalize py-2 block hover:text-primary" href="#">tour guide</a></li>
+                    </ul>
+                </div>                
+                <div class="widget">
+                    <h3 class="footer-title text-gray-200 mb-4">Destination</h3>
+                    <ul class="flex flex-col">
+                        <li><a class="text-gray-500 capitalize py-2 block hover:text-primary" href="#">New York Tour</a></li>
+                        <li><a class="text-gray-500 capitalize py-2 block hover:text-primary" href="#">Indonesia Tour</a></li>
+                        <li><a class="text-gray-500 capitalize py-2 block hover:text-primary" href="#">Nepal Tour</a></li>
+                        <li><a class="text-gray-500 capitalize py-2 block hover:text-primary" href="#">Saudi Arab Tour</a></li>
+                    </ul>
+                </div>                
+                <div class="widget">
+                    <h3 class="footer-title text-gray-200 mb-4">We Are Here</h3>
+                    <p class="my-4 text-gray-500">Quisque purus augue, facilisis andi neque idont accumsan fringilla massa. Vivamusol id nibhom condimentum.</p>
+                    <div class="payment-partner mt-8">
+                        <h3 class="footer-title text-gray-200 mb-4">Payment Partner</h3>
+                        <div class="icons">
+                            <ul class="flex space-x-4">
+                                <li><img src="images/icon/visa-logo.svg" alt=""></li>
+                                <li><img src="images/icon/stripe-logo.svg" alt=""></li>
+                                <li><img src="images/icon/paypal-logo.svg" alt=""></li>
+                                <li><img src="images/icon/skrill-logo.svg" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>            
+        </div>
+        <div class="container">
+            <div class="copyright border-t border-gray-500 py-6 flex flex-col gap-5 md:flex-row justify-between items-center flex-wrap">
+                <ul class="social-list flex space-x-4">
+                    <li><a class="hover:bg-primary hover:text-white hover:border-primary w-6 h-6 border rounded-full flex items-center justify-center p-3 text-gray-500" href="#"><i class="ri-facebook-line"></i></a></li>
+                    <li><a class="hover:bg-primary hover:text-white hover:border-primary w-6 h-6 border rounded-full flex items-center justify-center p-3 text-gray-500" href="#"><i class="ri-twitter-x-line"></i></a></li>
+                    <li><a class="hover:bg-primary hover:text-white hover:border-primary w-6 h-6 border rounded-full flex items-center justify-center p-3 text-gray-500" href="#"><i class="ri-linkedin-fill"></i></a></li>
+                    <li><a class="hover:bg-primary hover:text-white hover:border-primary w-6 h-6 border rounded-full flex items-center justify-center p-3 text-gray-500" href="#"><i class="ri-instagram-line"></i></a></li>
+                </ul>
+                <p class="text-sm text-gray-500">©Copyright 2024 Tripword | Design By <a class="text-white" href="https://artifexsolution.com/">Artifexsolution</a></p>
+                <div class="footer-right">
+                    <ul class="flex space-x-7">
+                        <li><a class="text-gray-500 hover:text-primary" href="#">Privacy Policy</a></li>
+                        <li><a class="relative text-gray-500 hover:text-primary before:w-1 before:h-1 before:rounded-full before:absolute before:-left-4 before:top-1/2 before:bg-white" href="#">Terms & Condition</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        let tabs = document.querySelectorAll(".tab")
+        let indicator = document.querySelector(".indicator")
+        let panels = document.querySelectorAll(".tab-panel")
+
+        indicator.style.width = tabs[0].getBoundingClientRect().width + 'px'
+        indicator.style.left = tabs[0].getBoundingClientRect().left - tabs[0].parentElement.getBoundingClientRect().left + 'px'
+
+        tabs.forEach(tab =>{
+        tab.addEventListener("click", ()=>{
+            let tabTarget = tab.getAttribute("aria-controls")
+
+            indicator.style.width = tab.getBoundingClientRect().width + 'px'
+            indicator.style.left = tab.getBoundingClientRect().left - tab.parentElement.getBoundingClientRect().left + 'px'
+
+
+            panels.forEach(panel =>{
+            let panelId = panel.getAttribute("id")
+            if(tabTarget === panelId){
+                panel.classList.remove("invisible", "opacity-0")
+                panel.classList.add("visible", "opacity-100")
+            } else {
+                panel.classList.add("invisible", "opacity-0")
+            }
+            })
+        })
+        })
+    </script>
 </body>
 </html>

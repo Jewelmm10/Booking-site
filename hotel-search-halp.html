@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Travel & Trips business</title>
+</head>
+<body>
+    <div class="header-margin mt-[90px]"></div>
+    <div class="header h-[90px] bg-gray-900 absolute top-0 left-0 z-50 w-full py-2">
+        <div class="container">
+            <div class="flex items-center justify-between">                
+                <div class="logo flex-1">
+                    <a href="index.html"><img class="w-28" src="images/logo.png"></a>
+                </div>
+                <nav class="hidden md:block flex-1 ml-24">
+                    <ul class="flex items-center space-x-4">
+                        <li><a class="font-bold uppercase text-sm text-white" href="#">Flight</a></li>
+                        <li><a class="font-bold uppercase text-sm text-white" href="#">Hotel</a></li>
+                        <li><a class="font-bold uppercase text-sm text-white" href="#">Activity</a></li>
+                        <li><a class="font-bold uppercase text-sm text-white" href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="hidden md:flex items-center">
+                    <div class="curency uppercase cursor-pointer text-white">usd</div>
+                    <a class="btn border border-gray-200 px-4 py-2 rounded ml-4 text-white" href="#">Sign In</a>
+                </div>
+                <div class="menu md:hidden border rounded-sm cursor-pointer w-10 h-10 text-xl flex items-center justify-center mr-2 text-white">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+        </div>
+        <div class="mobile_nav bg-white py-6 px-3 fixed top-0 -left-full transition-all duration-300 ease-in-out h-full w-full md:hidden z-50">
+            <div class="text-center flex justify-between"><a href="#">
+                <a class="flex-1 block self-center" href="/"><img class="w-28" src="images/logo.png" alt="logo"></a>
+                <span class="close_menu cursor-pointer block w-10 h-10 text-4xl text-gray-400"><i class="ri-close-line"></i></span>
+            </div>
+            <nav class="my-6">
+                <ul class="flex flex-col space-y-3">
+                    <li><a class="block border-b py-2 hover:text-primary font-bold uppercase text-sm text-gray-600" href="#">Flight</a></li>
+                    <li><a class="block border-b py-2 hover:text-primary font-bold uppercase text-sm text-gray-600" href="#">Hotel</a></li>
+                    <li><a class="block border-b py-2 hover:text-primary font-bold uppercase text-sm text-gray-600" href="#">Activity</a></li>
+                    <li><a class="block border-b py-2 hover:text-primary font-bold uppercase text-sm text-gray-600" href="#">Contact</a></li>                 
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="advance-search shadow-lg py-5">
+        <div class="container">
+            <div class="advance-search">                            
+                <div class="flight-type-wrapper flex space-x-2 py-3">
+                    <div class="flex items-center">
+                        <input id="c1" type="checkbox" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                        <label for="c1" class="w-full py-2 px-2 ms-2 text-sm font-medium text-gray-900">Business</label>
+                    </div>                
+                    <div class="flex items-center">
+                        <input id="c-2" type="checkbox" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                        <label for="c-2" class="w-full py-2 px-2 ms-2 text-sm font-medium text-gray-900">Couples</label>
+                    </div>     
+                </div>
+                <form action="hotel-search-halp.html">
+                    <div class="flex flex-col md:flex-row items-center gap-0.5">
+                        <div class="destination flex flex-1 w-full md:w-auto justify-between gap-0.5 relative">
+                            <div class="bg-gray-200 px-5 py-3 md:rounded-s-md flex-1">
+                                <div class="item-inner">
+                                    <p class="text-xs text-gray-400">Destination</p>
+                                    <p>Cox's Bazar</p>                            
+                                </div>
+                            </div>                    
+                        </div>                                       
+                        <div class="calendar flex w-full md:w-auto gap-0.5">
+                            <div class="bg-gray-200 flex-1 md:flex-auto px-8 py-3">
+                                <div class="item-inner">
+                                    <p class="text-xs text-gray-400">Departure</p>
+                                    <p>Sat, 09 Mar</p>   
+                                </div>
+                            </div> 
+                            <div class="bg-gray-200 flex-1 md:flex-auto px-8 py-3">
+                                <div class="item-inner">
+                                    <p class="text-xs text-gray-400">Return</p>
+                                    <p>Sun, 10 Mar</p>
+                                </div> 
+                            </div>
+                        </div>                                        
+                        <div class="bg-gray-200 w-full md:w-auto flex-1 md:flex-auto px-5 py-3">
+                            <div class="item-inner">
+                                <p class="text-xs text-gray-400">Travellers & Class</p>
+                                <p>1 Traveller, Economy</p>
+                            </div> 
+                        </div>
+                        <button class="md:rounded-e-md w-full md:w-auto px-8 py-5 bg-primary text-white"><span class="me-2"><i class="ri-search-line"></i></span>Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <section class="bg-slate-100 py-12">
+        <div class="container">
+             <div class="grid grid-cols-1 md:grid-cols-4 md:gap-6 ">
+                 <!-- sidebar -->
+                 <div class="col-span-1 overflow-hidden">
+                     <div class="divide-y divide-gray-200 space-y-5 bg-white px-4 pb-6 shadow rounded ">
+                         <!-- cat item -->
+                         <div class="cat-item pt-5">
+                             <h3 class="text-base text-gray-500 mb-3 uppercase font-medium">Bed Type</h3>
+                             <div class="flex flex-wrap gap-2">
+                                <div class="btn-selector flex-auto text-center">
+                                    <input type="radio" name="size" class="hidden" id="type-1">
+                                    <label for="type-1" class="inline-block text-xs bg-gray-200 rounded-sm px-5 py-2 hover:bg-primary hover:text-white cursor-pointer w-full">1 Double</label>
+                                 </div>                                 
+                                <div class="btn-selector flex-auto text-center">
+                                    <input type="radio" name="size" class="hidden" id="b2">
+                                    <label for="b2" class="inline-block text-xs bg-gray-200 rounded-sm px-5 py-2 hover:bg-primary hover:text-white cursor-pointer w-full">2 Beds</label>
+                                 </div>
+                                <div class="btn-selector flex-auto text-center">
+                                    <input type="radio" name="size" class="hidden" id="b3">
+                                    <label for="b3" class="inline-block text-xs bg-gray-200 rounded-sm px-5 py-2 hover:bg-primary hover:text-white cursor-pointer w-full">1 Single Bed</label>
+                                 </div>
+                                <div class="btn-selector flex-auto text-center">
+                                    <input type="radio" name="size" class="hidden" id="b4">
+                                    <label for="b4" class="inline-block text-xs bg-gray-200 rounded-sm px-5 py-2 hover:bg-primary hover:text-white cursor-pointer w-full">King Bed</label>
+                                 </div>
+                                 
+                                <div class="btn-selector flex-auto text-center">
+                                    <input type="radio" name="size" class="hidden" id="b5">
+                                    <label for="b5" class="inline-block text-xs bg-gray-200 rounded-sm px-5 py-2 hover:bg-primary hover:text-white cursor-pointer w-full">Delux Bed</label>
+                                 </div>
+
+                             </div>
+
+                         </div>
+                         <!-- end cat item -->  
+                         <!-- cat item -->
+                         <div class="cat-item pt-5">
+                             <h3 class="text-base text-gray-500 mb-3 uppercase font-medium">Popular Filters</h3>
+                             <div class="flex items-center mb-2">
+                                 <input id="c1" type="checkbox" class="text-primary focus:ring-0">
+                                 <label class="text-base text-gray-500 ml-3 cursor-pointer" for="c1">Free Cancellation Available</label>
+                             </div>                            
+                             <div class="flex items-center mb-2">
+                                 <input id="c2" type="checkbox" class="text-primary focus:ring-0">
+                                 <label class="text-base text-gray-500 ml-3 cursor-pointer" for="c2">Pay At Hotel Available</label>
+                             </div>
+                             <div class="flex items-center mb-2">
+                                 <input id="c3" type="checkbox" class="text-primary focus:ring-0">
+                                 <label class="text-base text-gray-500 ml-3 cursor-pointer" for="c3">Free Breakfast Included</label>
+                             </div>
+                         </div>
+                         <!-- end cat item -->                        
+                         <!-- cat item -->
+                         <div class="cat-item pt-5">
+                             <h3 class="text-base text-gray-500 mb-3 uppercase font-medium">Amenities</h3>
+                             <div class="flex items-center mb-2">
+                                 <input id="a1" type="checkbox" class="text-primary focus:ring-0">
+                                 <label class="text-base text-gray-500 ml-3 cursor-pointer" for="a1">Free Wifi</label>
+                                 <span class="ml-auto text-gray-500 text-sm">53</span>
+                             </div>                            
+                             <div class="flex items-center mb-2">
+                                 <input id="a2" type="checkbox" class="text-primary focus:ring-0">
+                                 <label class="text-base text-gray-500 ml-3 cursor-pointer" for="a2">4 Breakfast included</label>
+                                 <span class="ml-auto text-gray-500 text-sm">45</span>
+                             </div>
+                             <div class="flex items-center mb-2">
+                                 <input id="a3" type="checkbox" class="text-primary focus:ring-0">
+                                 <label class="text-base text-gray-500 ml-3 cursor-pointer" for="a3">Pool</label>
+                                 <span class="ml-auto text-gray-500 text-sm">21</span>
+                             </div>                            
+                             <div class="flex items-center mb-2">
+                                 <input id="a4" type="checkbox" class="text-primary focus:ring-0">
+                                 <label class="text-base text-gray-500 ml-3 cursor-pointer" for="a4">Free Parking</label>
+                                 <span class="ml-auto text-gray-500 text-sm">12</span>
+                             </div>
+                             
+                             <div class="flex items-center mb-2">
+                                 <input id="ac" type="checkbox" class="text-primary focus:ring-0">
+                                 <label class="text-base text-gray-500 ml-3 cursor-pointer" for="ac">Air Conditioning</label>
+                                 <span class="ml-auto text-gray-500 text-sm">12</span>
+                             </div>
+
+                         </div>
+                         <!-- end cat item -->                        
+                         <!-- cat item -->
+                         <div class="cat-item pt-5">
+                             <h3 class="text-base text-gray-500 mb-3 uppercase font-medium">Fun things To Do</h3>
+                             <div class="flex items-center mb-2">
+                                 <input id="b1" type="checkbox" class="text-primary focus:ring-0">
+                                 <label class="text-base text-gray-500 ml-3 cursor-pointer" for="b1">Beach</label>
+                                 <span class="ml-auto text-gray-500 text-sm">53</span>
+                             </div>                            
+                             <div class="flex items-center mb-2">
+                                 <input id="b2" type="checkbox" class="text-primary focus:ring-0">
+                                 <label class="text-base text-gray-500 ml-3 cursor-pointer" for="b2">Fitness center</label>
+                                 <span class="ml-auto text-gray-500 text-sm">45</span>
+                             </div>  
+                             <div class="flex items-center mb-2">
+                                <input id="l1" type="checkbox" class="text-primary focus:ring-0">
+                                <label class="text-base text-gray-500 ml-3 cursor-pointer" for="l1">Cycling</label>
+                                <span class="ml-auto text-gray-500 text-sm">53</span>
+                            </div>                            
+                            <div class="flex items-center mb-2">
+                                <input id="l2" type="checkbox" class="text-primary focus:ring-0">
+                                <label class="text-base text-gray-500 ml-3 cursor-pointer" for="l2">Shopping center</label>
+                                <span class="ml-auto text-gray-500 text-sm">45</span>
+                            </div>                           
+                         </div>
+                         <!-- end cat item -->
+                     </div>
+                 </div> 
+                 <!-- main content -->
+                 <div class="mt-6 md:mt-auto col-span-1 md:col-span-3 overflow-hidden">
+                     <div class="flex flex-col md:flex-row items-center justify-between">
+                         <h4 class="font-semibold">Showing 15 Search Results</h4>
+                         <div class="filters flex md:mt-auto mt-5 ">
+                             <div class="me-3">
+                                 <div class="bg-white rounded p-3 flex items-center">
+                                     <label class="inline-flex items-center cursor-pointer">
+                                         <input type="checkbox" value="" class="sr-only peer">
+                                         <div class="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-0 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+                                         <span class="ms-3 text-sm font-medium text-gray-900">Smart</span>
+                                     </label>
+                                 </div>
+                                 
+                             </div>
+                             <ul class="tab-nav bg-primary rounded shadow-sm p-1 flex flex-wrap items-center" id="filtersblocks" role="tablist">
+                                 <li class="nav-item">
+                                     <button class="nav-link rounded-3" data-bs-toggle="tab" type="button" role="tab" aria-selected="false" tabindex="-1">Our Trending</button>
+                                 </li>
+                                 <li class="nav-item">
+                                     <button class="nav-link rounded-3" data-bs-toggle="tab" type="button" role="tab" aria-selected="false" tabindex="-1">Most Popular</button>
+                                 </li>
+                                 <li class="nav-item">
+                                     <button class="nav-link rounded-3 active" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Lowest Price</button>
+                                 </li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">                      
+                        <div class="service-item bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="feature-img">
+                                <a href="#">
+                                    <img src="images/feature-1-2-450x300.png" alt="services">
+                                </a>
+                            </div>
+                            <div class="content-item relative p-5">
+                                <div class="content-inner">
+                                    <div class="stars text-primary">
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                    </div>
+                                    <h3 class="title">Hotel WBF Hommachi</h3>
+                                    <span class="text-gray-500 text-sm">New York City</span>
+                                </div>
+                                <div class="section-footer mt-4 pt-4 border-t-gray-500">
+                                    <div class="reviews mb-3">
+                                        <span class="rate bg-primary/5 border border-primary text-primary rounded-sm text-sm px-3 py-1">
+                                            5<span>/</span>5
+                                        </span>
+                                        <span class="rate-text font-semibold mx-3">Excellent</span>
+                                        <span class="rate-summary text-gray-500 text-sm">(3 Reviews)</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-500 text-sm">
+                                        From:<span class="text-black font-semibold mx-2 text-lg">$150.00</span>
+                                        <span class="unit">/night</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                
+                        <div class="service-item bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="feature-img">
+                                <a href="#">
+                                    <img src="images/feature-1-450x300.png" alt="services">
+                                </a>
+                            </div>
+                            <div class="content-item relative p-5">
+                                <div class="content-inner">
+                                    <div class="stars text-primary">
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                    </div>
+                                    <h3 class="title">Redac Gateway Hotel</h3>
+                                    <span class="text-gray-500 text-sm">Los Angeles</span>
+                                </div>
+                                <div class="section-footer mt-4 pt-4 border-t-gray-500">
+                                    <div class="reviews mb-3">
+                                        <span class="rate bg-primary/5 border border-primary text-primary rounded-sm text-sm px-3 py-1">
+                                            5<span>/</span>5
+                                        </span>
+                                        <span class="rate-text font-semibold mx-3">Excellent</span>
+                                        <span class="rate-summary text-gray-500 text-sm">(3 Reviews)</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-500 text-sm">
+                                        From:<span class="text-black font-semibold mx-2 text-lg">$150.00</span>
+                                        <span class="unit">/night</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-item bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="feature-img">
+                                <a href="#">
+                                    <img src="images/feature-12-450x300.png" alt="services">
+                                </a>
+                            </div>
+                            <div class="content-item relative p-5">
+                                <div class="content-inner">
+                                    <div class="stars text-primary">
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                    </div>
+                                    <h3 class="title">Edwardian Kenilworth</h3>
+                                    <span class="text-gray-500 text-sm">Virginia</span>
+                                </div>
+                                <div class="section-footer mt-4 pt-4 border-t-gray-500">
+                                    <div class="reviews mb-3">
+                                        <span class="rate bg-primary/5 border border-primary text-primary rounded-sm text-sm px-3 py-1">
+                                            5<span>/</span>5
+                                        </span>
+                                        <span class="rate-text font-semibold mx-3">Excellent</span>
+                                        <span class="rate-summary text-gray-500 text-sm">(3 Reviews)</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-500 text-sm">
+                                        From:<span class="text-black font-semibold mx-2 text-lg">$150.00</span>
+                                        <span class="unit">/night</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="service-item bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="feature-img">
+                                <a href="#">
+                                    <img src="images/feature-1-450x300.png" alt="services">
+                                </a>
+                            </div>
+                            <div class="content-item relative p-5">
+                                <div class="content-inner">
+                                    <div class="stars text-primary">
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                    </div>
+                                    <h3 class="title">Redac Gateway Hotel</h3>
+                                    <span class="text-gray-500 text-sm">Los Angeles</span>
+                                </div>
+                                <div class="section-footer mt-4 pt-4 border-t-gray-500">
+                                    <div class="reviews mb-3">
+                                        <span class="rate bg-primary/5 border border-primary text-primary rounded-sm text-sm px-3 py-1">
+                                            5<span>/</span>5
+                                        </span>
+                                        <span class="rate-text font-semibold mx-3">Excellent</span>
+                                        <span class="rate-summary text-gray-500 text-sm">(3 Reviews)</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-500 text-sm">
+                                        From:<span class="text-black font-semibold mx-2 text-lg">$150.00</span>
+                                        <span class="unit">/night</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-item bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="feature-img">
+                                <a href="#">
+                                    <img src="images/feature-12-450x300.png" alt="services">
+                                </a>
+                            </div>
+                            <div class="content-item relative p-5">
+                                <div class="content-inner">
+                                    <div class="stars text-primary">
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                    </div>
+                                    <h3 class="title">Edwardian Kenilworth</h3>
+                                    <span class="text-gray-500 text-sm">Virginia</span>
+                                </div>
+                                <div class="section-footer mt-4 pt-4 border-t-gray-500">
+                                    <div class="reviews mb-3">
+                                        <span class="rate bg-primary/5 border border-primary text-primary rounded-sm text-sm px-3 py-1">
+                                            5<span>/</span>5
+                                        </span>
+                                        <span class="rate-text font-semibold mx-3">Excellent</span>
+                                        <span class="rate-summary text-gray-500 text-sm">(3 Reviews)</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-500 text-sm">
+                                        From:<span class="text-black font-semibold mx-2 text-lg">$150.00</span>
+                                        <span class="unit">/night</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="service-item bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="feature-img">
+                                <a href="#">
+                                    <img src="images/feature-1-2-450x300.png" alt="services">
+                                </a>
+                            </div>
+                            <div class="content-item relative p-5">
+                                <div class="content-inner">
+                                    <div class="stars text-primary">
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                    </div>
+                                    <h3 class="title">Hotel WBF Hommachi</h3>
+                                    <span class="text-gray-500 text-sm">New York City</span>
+                                </div>
+                                <div class="section-footer mt-4 pt-4 border-t-gray-500">
+                                    <div class="reviews mb-3">
+                                        <span class="rate bg-primary/5 border border-primary text-primary rounded-sm text-sm px-3 py-1">
+                                            5<span>/</span>5
+                                        </span>
+                                        <span class="rate-text font-semibold mx-3">Excellent</span>
+                                        <span class="rate-summary text-gray-500 text-sm">(3 Reviews)</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-500 text-sm">
+                                        From:<span class="text-black font-semibold mx-2 text-lg">$150.00</span>
+                                        <span class="unit">/night</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                
+                        <div class="service-item bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="feature-img">
+                                <a href="#">
+                                    <img src="images/feature-1-450x300.png" alt="services">
+                                </a>
+                            </div>
+                            <div class="content-item relative p-5">
+                                <div class="content-inner">
+                                    <div class="stars text-primary">
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                    </div>
+                                    <h3 class="title">Redac Gateway Hotel</h3>
+                                    <span class="text-gray-500 text-sm">Los Angeles</span>
+                                </div>
+                                <div class="section-footer mt-4 pt-4 border-t-gray-500">
+                                    <div class="reviews mb-3">
+                                        <span class="rate bg-primary/5 border border-primary text-primary rounded-sm text-sm px-3 py-1">
+                                            5<span>/</span>5
+                                        </span>
+                                        <span class="rate-text font-semibold mx-3">Excellent</span>
+                                        <span class="rate-summary text-gray-500 text-sm">(3 Reviews)</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-500 text-sm">
+                                        From:<span class="text-black font-semibold mx-2 text-lg">$150.00</span>
+                                        <span class="unit">/night</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-item bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="feature-img">
+                                <a href="#">
+                                    <img src="images/feature-12-450x300.png" alt="services">
+                                </a>
+                            </div>
+                            <div class="content-item relative p-5">
+                                <div class="content-inner">
+                                    <div class="stars text-primary">
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                    </div>
+                                    <h3 class="title">Edwardian Kenilworth</h3>
+                                    <span class="text-gray-500 text-sm">Virginia</span>
+                                </div>
+                                <div class="section-footer mt-4 pt-4 border-t-gray-500">
+                                    <div class="reviews mb-3">
+                                        <span class="rate bg-primary/5 border border-primary text-primary rounded-sm text-sm px-3 py-1">
+                                            5<span>/</span>5
+                                        </span>
+                                        <span class="rate-text font-semibold mx-3">Excellent</span>
+                                        <span class="rate-summary text-gray-500 text-sm">(3 Reviews)</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-500 text-sm">
+                                        From:<span class="text-black font-semibold mx-2 text-lg">$150.00</span>
+                                        <span class="unit">/night</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="service-item bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="feature-img">
+                                <a href="#">
+                                    <img src="images/feature-1-450x300.png" alt="services">
+                                </a>
+                            </div>
+                            <div class="content-item relative p-5">
+                                <div class="content-inner">
+                                    <div class="stars text-primary">
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                        <span class="ri-star-s-fill"></span>
+                                    </div>
+                                    <h3 class="title">Redac Gateway Hotel</h3>
+                                    <span class="text-gray-500 text-sm">Los Angeles</span>
+                                </div>
+                                <div class="section-footer mt-4 pt-4 border-t-gray-500">
+                                    <div class="reviews mb-3">
+                                        <span class="rate bg-primary/5 border border-primary text-primary rounded-sm text-sm px-3 py-1">
+                                            5<span>/</span>5
+                                        </span>
+                                        <span class="rate-text font-semibold mx-3">Excellent</span>
+                                        <span class="rate-summary text-gray-500 text-sm">(3 Reviews)</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-500 text-sm">
+                                        From:<span class="text-black font-semibold mx-2 text-lg">$150.00</span>
+                                        <span class="unit">/night</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="pagination flex justify-center space-x-3 bg-white rounded-md p-3 shadow-sm mt-5"> 
+                         <a href="#" class="flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"><i class="ri-arrow-left-s-line"></i></a>                        
+                         <a href="#" class="flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700">1</a>                        
+                         <a href="#" class="flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700">2</a>
+                         <a href="#" class="flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"><i class="ri-arrow-right-s-line"></i></a>
+                     </div>
+                 </div>             
+             </div>
+        </div>
+     </section>
+     <footer class="bg-gray-950">
+        <div class="container py-24">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-5 md:gap-4">
+                <div class="widget">
+                    <div class="footer-logo">
+                        <a href="index.html"><img class="w-1/2" src="images/logo.png" alt="logo"></a>
+                    </div>
+                    <p class="my-4 text-gray-500">Urna ratione ante harum provident, eleifend, vulputate molestiae proin fringilla, praesentium magna</p>
+                    <button class="btn btn-primary btn-search">Book A tour</button>
+                </div>
+                <div class="widget">
+                    <h3 class="footer-title text-gray-200 mb-4">Quick Link</h3>
+                    <ul class="flex flex-col">
+                        <li><a class="text-gray-500 capitalize py-2 block hover:text-primary" href="#">About us</a></li>
+                        <li><a class="text-gray-500 capitalize py-2 block hover:text-primary" href="#">Destinations</a></li>
+                        <li><a class="text-gray-500 capitalize py-2 block hover:text-primary" href="#">Tour package</a></li>
+                        <li><a class="text-gray-500 capitalize py-2 block hover:text-primary" href="#">tour guide</a></li>
+                    </ul>
+                </div>                
+                <div class="widget">
+                    <h3 class="footer-title text-gray-200 mb-4">Destination</h3>
+                    <ul class="flex flex-col">
+                        <li><a class="text-gray-500 capitalize py-2 block hover:text-primary" href="#">New York Tour</a></li>
+                        <li><a class="text-gray-500 capitalize py-2 block hover:text-primary" href="#">Indonesia Tour</a></li>
+                        <li><a class="text-gray-500 capitalize py-2 block hover:text-primary" href="#">Nepal Tour</a></li>
+                        <li><a class="text-gray-500 capitalize py-2 block hover:text-primary" href="#">Saudi Arab Tour</a></li>
+                    </ul>
+                </div>                
+                <div class="widget">
+                    <h3 class="footer-title text-gray-200 mb-4">We Are Here</h3>
+                    <p class="my-4 text-gray-500">Quisque purus augue, facilisis andi neque idont accumsan fringilla massa. Vivamusol id nibhom condimentum.</p>
+                    <div class="payment-partner mt-8">
+                        <h3 class="footer-title text-gray-200 mb-4">Payment Partner</h3>
+                        <div class="icons">
+                            <ul class="flex space-x-4">
+                                <li><img src="images/icon/visa-logo.svg" alt=""></li>
+                                <li><img src="images/icon/stripe-logo.svg" alt=""></li>
+                                <li><img src="images/icon/paypal-logo.svg" alt=""></li>
+                                <li><img src="images/icon/skrill-logo.svg" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>            
+        </div>
+        <div class="container">
+            <div class="copyright border-t border-gray-500 py-6 flex flex-col gap-5 md:flex-row justify-between items-center flex-wrap">
+                <ul class="social-list flex space-x-4">
+                    <li><a class="hover:bg-primary hover:text-white hover:border-primary w-6 h-6 border rounded-full flex items-center justify-center p-3 text-gray-500" href="#"><i class="ri-facebook-line"></i></a></li>
+                    <li><a class="hover:bg-primary hover:text-white hover:border-primary w-6 h-6 border rounded-full flex items-center justify-center p-3 text-gray-500" href="#"><i class="ri-twitter-x-line"></i></a></li>
+                    <li><a class="hover:bg-primary hover:text-white hover:border-primary w-6 h-6 border rounded-full flex items-center justify-center p-3 text-gray-500" href="#"><i class="ri-linkedin-fill"></i></a></li>
+                    <li><a class="hover:bg-primary hover:text-white hover:border-primary w-6 h-6 border rounded-full flex items-center justify-center p-3 text-gray-500" href="#"><i class="ri-instagram-line"></i></a></li>
+                </ul>
+                <p class="text-sm text-gray-500">©Copyright 2024 Tripword | Design By <a class="text-white" href="https://artifexsolution.com/">Artifexsolution</a></p>
+                <div class="footer-right">
+                    <ul class="flex space-x-7">
+                        <li><a class="text-gray-500 hover:text-primary" href="#">Privacy Policy</a></li>
+                        <li><a class="relative text-gray-500 hover:text-primary before:w-1 before:h-1 before:rounded-full before:absolute before:-left-4 before:top-1/2 before:bg-white" href="#">Terms & Condition</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        let tabs = document.querySelectorAll(".tab")
+        let indicator = document.querySelector(".indicator")
+        let panels = document.querySelectorAll(".tab-panel")
+
+        indicator.style.width = tabs[0].getBoundingClientRect().width + 'px'
+        indicator.style.left = tabs[0].getBoundingClientRect().left - tabs[0].parentElement.getBoundingClientRect().left + 'px'
+
+        tabs.forEach(tab =>{
+        tab.addEventListener("click", ()=>{
+            let tabTarget = tab.getAttribute("aria-controls")
+
+            indicator.style.width = tab.getBoundingClientRect().width + 'px'
+            indicator.style.left = tab.getBoundingClientRect().left - tab.parentElement.getBoundingClientRect().left + 'px'
+
+
+            panels.forEach(panel =>{
+            let panelId = panel.getAttribute("id")
+            if(tabTarget === panelId){
+                panel.classList.remove("invisible", "opacity-0")
+                panel.classList.add("visible", "opacity-100")
+            } else {
+                panel.classList.add("invisible", "opacity-0")
+            }
+            })
+        })
+        })
+    </script>
+</body>
+</html>

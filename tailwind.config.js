@@ -20,8 +20,15 @@ module.exports = {
       "2xl": "1320px",
       "2xl-max": { max: "1320px" },
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#ff9500',
+        secondary: '#ecc94b',
+      }        
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }
 

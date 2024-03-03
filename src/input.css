@@ -1,3 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,600;1,9..40,600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+}
+
+.on-show {
+    @apply left-0;
+}
+.filter-wrapper {
+    @apply max-w-3xl mx-auto px-8 sm:px-0;
+}
+.indicator{
+    @apply h-11 my-auto top-0 bottom-0 left-0 rounded-full bg-gray-950 shadow-md;
+    transition: left .4s;
+}
+.tab-btn {
+    @apply relative block h-10 px-6 rounded-full;
+}
+.btn {
+    @apply inline-block font-normal leading-tight text-gray-700 text-center cursor-pointer px-4 py-2 transition rounded-md;
+}
+.btn.btn-primary {
+    @apply bg-primary text-white;
+}
+.btn-search {
+    @apply rounded-full py-3 px-6;
+}
+.check-in-out {
+    @apply absolute w-full h-full opacity-0 cursor-pointer text-transparent border-none left-0 bottom-0 z-0
+}
+.render-text {
+    @apply text-sm leading-6 text-gray-500 whitespace-nowrap;
+}
+.item-inner {
+    @apply flex flex-col;
+}
+.item-inner label {
+    @apply font-medium text-base leading-6 text-gray-700 whitespace-nowrap;
+}
+.package-meta li {
+    @apply inline-block px-3 first:pl-0 relative before:content-['|'] before:absolute before:text-gray-500 before:-right-1 before:top-0;
+}
+.package-meta ul li:last-child:before {
+    display: none;
+}
+.nav-link {
+    @apply px-3 py-2 text-xs text-white rounded-md;
+}
+.nav-link.active {
+    @apply bg-white text-primary;
+}
+.rotateX-180 {
+    transform: rotateX(180deg);
+}
+.btn-selector input:checked + label {
+    @apply bg-primary text-white;
+}
